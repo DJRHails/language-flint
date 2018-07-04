@@ -9,73 +9,64 @@
 'patterns': [
   {
     'name': 'keyword.others.flint'
-    'match': '^\\s*(#if|#else|#endif|#elseif|@warn_unused_result|@discardableResult|@IBAction|@IBOutlet|@IBDesignable|@IBInspectable)\\b'
+    'match': '^\\s*(associatedtype
+                    |implicit
+                    |inout)\\b'
   }
   {
     'name': 'keyword.declaration.flint'
-    'match': '\\b(deinit|import|init|subscript)\\b'
+    'match': '\\b(import|init)\\b'
   }
   {
     'name': 'storage.type.flint'
-    'match': '\\b(precedencegroup|class|struct|enum|extension|protocol|let|var|typealias)\\b'
+    'match': '\\b(struct
+                  |contract
+                  |let
+                  |var)\\b'
   }
   {
-    'name': 'storage.modifier.flint'
-    'match': '\\b(final|internal|private|fileprivate|public|open|static|required|convenience)\\b'
+    'name': 'definition.modifier.flint'
+    'match': '\\b(public
+                  |mutating)\\b'
   }
   {
     'name': 'keyword.statement.flint'
-    'match': '\\b(try|catch|repeat|break|case|continue|default|do|else|fallthrough|if|in|for|return|switch|where|while|guard|defer)\\b'
+    'match': '\\b(try
+                  |throw
+                  |catch
+                  |repeat
+                  |break
+                  |case
+                  |continue
+                  |default
+                  |do
+                  |else
+                  |fallthrough
+                  |if
+                  |in
+                  |for
+                  |return
+                  |switch
+                  |where
+                  |while
+                  |guard
+                  |defer)\\b'
   }
   {
     'name': 'support.type.flint'
-    'match': '(?x) \\b(Character|U?Int|U?Int(8|16|32|64)
-      |Float|Double|Float(32|64)|Bool|String|Date|Data|URL
-      |(double|float)[234]|(double|float)[234]x[234]
-      |Any
-      |AnyObject
-      |Error
-      |Equatable
-      |Hashable
-      |Comparable
-      |CustomDebugStringConvertible
-      |CustomStringConvertible
-      |OptionSet
-      |ManagedBuffer
-      |ManagedBufferPointer
-      |BitwiseOperations
-      |CountedSet
-      |Counter
-      |Directions
-      |ExpressibleByArrayLiteral
-      |ExpressibleByBooleanLiteral
-      |ExpressibleByDictionaryLiteral
-      |ExpressibleByExtendedGraphemeClusterLiteral
-      |ExpressibleByFloatLitera
-      |ExpressibleByIntegerLiteral
-      |ExpressibleByNilLiteral
-      |ExpressibleByStringInterpolation
-      |ExpressibleByStringLiteral
-      |ExpressibleByUnicodeScalarLiteral
-      |OrderedSet
-      |PaperSize
-      |RawRepresentable
-      |(UI|NS|CF|CG)[A-Z][a-zA-Z0-9]+
-      |Stream
-      |(In|Out)putStream
-      |FileManager
-      |Array
-      |Unsafe[a-zA-Z]*Pointer
-      |Bundle
-      |Jex)\\b'
+    'match': '(?x) \\b(String
+                      |Boolean
+                      |Int
+                      |Address
+                      |Wei)\\b'
   }
   {
     'name': 'support.function.flint'
-    'match': '\\b(assert|assertionFailure|print)\\b'
+    'match': '\\b(assert)\\b'
   }
   {
     'name': 'keyword.expressions-and-types.flint'
-    'match': '\\b(as|dynamicType|is|new|super|self|Self|Type|#column|#file|#function|#line)\\b'
+    'match': '\\b(self)\\b'
   }
   {
     'name': 'keyword.reserved.flint'
@@ -105,22 +96,22 @@
 'repository':
   'comment':
     'patterns': [
-      {
-        'name': 'comment.block.flint'
-        'begin': '/\\*'
-        'beginCaptures':
-          '0':
-            'name': 'punctuation.definition.comment.begin.flint'
-        'end': '\\*/'
-        'endCaptures':
-          '0':
-            'name': 'punctuation.definition.comment.end.flint'
-        'patterns': [
-          {
-            'include': '#comment'
-          }
-        ]
-      }
+      # {
+      #   'name': 'comment.block.flint'
+      #   'begin': '/\\*'
+      #   'beginCaptures':
+      #     '0':
+      #       'name': 'punctuation.definition.comment.begin.flint'
+      #   'end': '\\*/'
+      #   'endCaptures':
+      #     '0':
+      #       'name': 'punctuation.definition.comment.end.flint'
+      #   'patterns': [
+      #     {
+      #       'include': '#comment'
+      #     }
+      #   ]
+      # }
       {
         'begin': '(^[ \\t]+)?(?=//)'
         'beginCaptures':

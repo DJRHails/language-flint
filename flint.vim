@@ -1,45 +1,5 @@
-" Based on https://github.com/apple/swift/blob/master/utils/vim/syntax/swift.vim
-
-if exists("b:current_syntax")
-    finish
-endif
-
-
-syn keyword flintImport skipwhite nextgroup=flintImportModule
-      \ import
-
-syn keyword flintDefinitionModifier
-      \ public
-
-syn keyword flintIdentifierKeyword
-      \ self
-
-syn keyword flintFuncKeywordGeneral skipwhite nextgroup=flintTypeParameters
-      \ init
-
-syn keyword flintMutating skipwhite nextgroup=flintFuncDefinition
-      \ mutating
-
 syn keyword flintFuncDefinition skipwhite nextgroup=flintTypeName,flintOperator
       \ func
-
-syn keyword flintTypeDefinition skipwhite nextgroup=flintTypeName
-      \ contract
-      \ struct
-
-syn keyword flintVarDefinition skipwhite nextgroup=flintVarName
-      \ let
-      \ var
-
-syn keyword flintBoolean
-      \ false
-      \ true
-
-syn keyword flintNil
-      \ nil
-
-syn keyword flintInOutKeyword skipwhite nextgroup=flintTypeName
-      \ inout
 
 syn match flintImportModule contained nextgroup=flintImportComponent
       \ /\<[A-Za-z_][A-Za-z_0-9]*\>/
@@ -146,7 +106,7 @@ hi def link flintDecimal Number
 hi def link flintHex Number
 hi def link flintOct Number
 hi def link flintBin Number
-hi def link flintOperator Function
+hi def link flintOperator Funcringtion
 hi def link flintChar Character
 hi def link flintLabel Operator
 hi def link flintMutating Statement
