@@ -25,7 +25,7 @@
                   |var)\\b'
   }
   {
-    'name': 'definition.modifier.flint'
+    'name': 'storage.modifier.flint'
     'match': '\\b(public
                   |mutating)\\b'
   }
@@ -55,7 +55,7 @@
   {
     'name': 'support.type.flint'
     'match': '(?x) \\b(String
-                      |Boolean
+                      |Bool
                       |Int
                       |Address
                       |Wei)\\b'
@@ -86,56 +86,11 @@
   {
     'include': '#literal'
   }
-  # {
-  #   'include': '#function'
-  # }
   {
     'include': '#operator'
   }
 ]
 'repository':
-  'comment':
-    'patterns': [
-      # {
-      #   'name': 'comment.block.flint'
-      #   'begin': '/\\*'
-      #   'beginCaptures':
-      #     '0':
-      #       'name': 'punctuation.definition.comment.begin.flint'
-      #   'end': '\\*/'
-      #   'endCaptures':
-      #     '0':
-      #       'name': 'punctuation.definition.comment.end.flint'
-      #   'patterns': [
-      #     {
-      #       'include': '#comment'
-      #     }
-      #   ]
-      # }
-      {
-        'begin': '(^[ \\t]+)?(?=//)'
-        'beginCaptures':
-          '1':
-            'name': 'punctuation.whitespace.comment.leading.flint'
-        'end': '(?!\\G)'
-        'patterns': [
-          {
-            'name': 'comment.line.double-slash.flint'
-            'begin': '//'
-            'beginCaptures':
-              '0':
-                'name': 'punctuation.definition.comment.flint'
-            'end': '\\n'
-            'patterns': [
-              {
-                'name': 'punctuation.separator.continuation.flint'
-                'match': '(?>\\\\\\s*\\n)'
-              }
-            ]
-          }
-        ]
-      }
-    ]
   'escaped-char':
     'patterns': [
       {
@@ -318,39 +273,38 @@
         'include': '#escaped-char'
       }
     ]
-  # 'function':
-  #   'name': 'meta.function.flint'
-  #   'begin': '(func) \\s*'
-  #   'end': '(?=\\{|#)|;|$'
-  #   'beginCaptures':
-  #     '1':
-  #       'name': 'storage.type.function.flint'
-  #   'comment': 'match regular function like: func myFunc(...)'
-  #   'patterns': [
-  #     # TODO: These should be refactored out...
-  #     {
-  #       'begin': '([^\\s]*)\\s*(\\()'
-  #       'beginCaptures':
-  #         '1':
-  #           'name': 'entity.name.function.flint'
-  #         '2':
-  #           'name': 'punctuation.definition.parameters.begin.flint'
-  #       'comment': 'match regular function like: func myFunc(...)'
-  #       'end': '(\\))'
-  #       'endCaptures':
-  #         '1':
-  #           'name': 'punctuation.definition.parameters.end.flint'
-  #     }
-  #     {
-  #       'name': 'meta.return-type.flint'
-  #       'match': '((->)\\s*([^\\{]+))'
-  #       'captures':
-  #         '2':
-  #           'name': 'keyword.operator.flint'
-  #         '3':
-  #           'name': 'entity.name.type.class.flint'
-  #     }
-  #   ]
+  'function':
+    'name': 'meta.function.flint'
+    'begin': '(func) \\s*'
+    'end': '(?=\\{|#)|;|$'
+    'beginCaptures':
+      '1':
+        'name': 'storage.type.function.flint'
+    'comment': 'match regular function like: func myFunc(...)'
+    'patterns': [
+      {
+        'begin': '([^\\s]*)\\s*(\\()'
+        'beginCaptures':
+          '1':
+            'name': 'entity.name.function.flint'
+          '2':
+            'name': 'punctuation.definition.parameters.begin.flint'
+        'comment': 'match regular function like: func myFunc(...)'
+        'end': '(\\))'
+        'endCaptures':
+          '1':
+            'name': 'punctuation.definition.parameters.end.flint'
+      }
+      {
+        'name': 'meta.return-type.flint'
+        'match': '((->)\\s*([^\\{]+))'
+        'captures':
+          '2':
+            'name': 'keyword.operator.flint'
+          '3':
+            'name': 'entity.name.type.class.flint'
+      }
+    ]
 
   'whitespace':
     'match':
