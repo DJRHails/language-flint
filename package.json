@@ -1,7 +1,7 @@
 {
   "name": "language-flint",
   "main": "./lib/language-flint",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "A short description of your package",
   "keywords": [],
   "repository": "https://github.com/DJRHails/language-flint",
