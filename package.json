@@ -2,7 +2,7 @@
   "name": "language-flint",
   "main": "./lib/language-flint",
   "version": "0.3.0",
-  "description": "A short description of your package",
+  "description": "Flint language support in Atom",
   "keywords": [],
   "repository": "https://github.com/DJRHails/language-flint",
   "license": "MIT",
